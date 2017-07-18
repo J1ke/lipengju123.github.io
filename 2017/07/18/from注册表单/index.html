@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: form表单——注册表单 date: 2017-7-18 tags: from categories:Web安全基础学习 此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，">
+  <meta name="description" content="form表单——注册表单date: 2017-7-18tags: fromcategories:Web安全基础学习此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2017/07/18/from注册表单/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: form表单——注册表单 date: 2017-7-18 tags: from categories:Web安全基础学习 此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，">
-<meta property="og:updated_time" content="2017-07-18T09:11:01.486Z">
+<meta property="og:description" content="form表单——注册表单date: 2017-7-18tags: fromcategories:Web安全基础学习此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
+<meta property="og:updated_time" content="2017-07-18T09:21:03.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: form表单——注册表单 date: 2017-7-18 tags: from categories:Web安全基础学习 此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，">
+<meta name="twitter:description" content="form表单——注册表单date: 2017-7-18tags: fromcategories:Web安全基础学习此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,17 +158,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: form表单——注册表单</p>
-<p>date: 2017-7-18</p>
-<p>tags: from</p>
-<p>categories:Web安全基础学习</p>
-<p>此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。<br>下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。</p>
+        <h4 id="form表单——注册表单"><a href="#form表单——注册表单" class="headerlink" title="form表单——注册表单"></a>form表单——注册表单</h4><p>date: 2017-7-18<br>tags: from<br><br>categories:Web安全基础学习<br><br><br>此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。<br>下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。</p>
 <p>首先我们需要考虑一个问题：html和后面的php如何结合起来?</p>
 <p>网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。</p>
 <p>用户注册往往包含用户名，密码，姓名，性别，年龄等信息。下面将一一列举是怎么实现的。</p>
-<p>1、表单的写法<br>声明一个表单：</p>
-<pre><code>`&lt;form action=&quot;提交到哪里去&quot; method=&quot;提交方式post&quot;&gt;&lt;/form&gt;`
-</code></pre><p><strong>注释：</strong>由上面一段代码，我们可以看到 action指提交的路径，即数据提交的地方。method指提交的方式，如上面一段代码使用的是post方法，长见的还有get方法。<br>如果读者想了解两者的区别，可以访问：<a href="http://&lt;p&gt;w3school&lt;/p" target="_blank" rel="external">w3school</a>。里面解释的很详细，在这就不多说了。</p>
+<p>1、表单的写法<br>声明一个表单：<br><br><code>&lt;form action=&quot;提交到哪里去&quot; method=&quot;提交方式post&quot;&gt;&lt;/form&gt;</code></p>
+<p><strong>注释：</strong>由上面一段代码，我们可以看到 action指提交的路径，即数据提交的地方。method指提交的方式，如上面一段代码使用的是post方法，长见的还有get方法。<br>如果读者想了解两者的区别，可以访问：<a href="http://www.w3school.com.cn/php/php_forms.asp" target="_blank" rel="external">w3school</a>。里面解释的很详细，在这就不多说了。</p>
 <p>2、 用户名：文本框<br>用户名：</p>
 <pre><code>`&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;`
 </code></pre><p><strong>注释：</strong>由上面一段代码，input表示输入，type表示以方式输入，name就不必多说了，都知道。</p>
