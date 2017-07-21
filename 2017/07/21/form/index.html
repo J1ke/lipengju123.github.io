@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title: form注册表单date: 2017-07-21 17:24:06tags:Web安全PHP基础—此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/form/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: form注册表单date: 2017-07-21 17:24:06tags:Web安全PHP基础—此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
+<meta property="og:updated_time" content="2017-07-21T09:26:50.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title: form注册表单date: 2017-07-21 17:24:06tags:Web安全PHP基础—此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。 首先我们需要考虑一个问题：html和后面的php如何结合起来? 网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,64 +153,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-form" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: form注册表单<br>date: 2017-07-21 17:24:06<br>tags:Web安全PHP基础<br>—<br>此文章主要记录一些自己最近几天学习php对于form表单的一些基础知识的总结。<br>下面，我们通过一个注册表单为例，简述一下form表单的一些基本知识。</p>
+<p>首先我们需要考虑一个问题：html和后面的php如何结合起来?</p>
+<p>网站注册，要用到表单，html和php等的数据交互，就要靠表单联系起来。</p>
+<p>用户注册往往包含用户名，密码，姓名，性别，年龄等信息。下面将一一列举是怎么实现的。</p>
+<p>1、表单的写法<br>声明一个表单：<br><br><code>&lt;form action=&quot;提交到哪里去&quot; method=&quot;提交方式post&quot;&gt;&lt;/form&gt;</code></p>
+<p><strong>注释：</strong>由上面一段代码，我们可以看到 action指提交的路径，即数据提交的地方。method指提交的方式，如上面一段代码使用的是post方法，长见的还有get方法。<br>如果读者想了解两者的区别，可以访问：<a href="http://www.w3school.com.cn/php/php_forms.asp" target="_blank" rel="external">w3school</a>。里面解释的很详细，在这就不多说了。</p>
+<p>2、 用户名：文本框<br>用户名：</p>
+<pre><code>`&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;`
+</code></pre><p><strong>注释：</strong>由上面一段代码，input表示输入，type表示以方式输入，name就不必多说了，都知道。</p>
+<p>3、密码：密码框</p>
+<p>密码：</p>
+<pre><code>`&lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;`
+</code></pre><p>4、性别：单选框 radio</p>
+<p>性别：</p>
+<p>男：<code>&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;boy&quot;&gt;</code><br>女：<code>&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;girl&quot;&gt;</code></p>
+<p><strong>注释：</strong>value指的是向后台传的值。这个与前面的用户名，密码的写法有区别，主要区别在于这个是单选选项，而用户名，密码是需要自己填写的信息。读者自行分析，很容易区别。</p>
+<p>5、个人简介：文本域 textarea</p>
+<pre><code>`&lt;textarea name=&quot;intro&quot; id=&quot;&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;`
+</code></pre><p><strong>注释：</strong>clos,row,指的是文本域的范围大小。</p>
+<p>6、action:提交到哪</p>
+<p><code>&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</code></p>
+<p><strong>注释：</strong>action可以提交到www.baidu.com。百度如果可以接收我们的信息,存储到数据库,一个动态的网页就完成了</p>
+<p>7、method:什么方法提交</p>
+<p><strong>注释：</strong>至于写法，在1中已经给出，在此就不给出代码，默认是get传参,参数显示在url地址栏上,我们的个人信息就暴露了，所以一般要用post传参。</p>
+<p>8、enctype:是否有文件</p>
+<p><strong>注释：</strong>如果有上传文件,要在form 处加上:<br>enctype=”multipart/form-data” 。这是定死的的,死记住！！</p>
+<p>以上就是我最近几天学习form表单，以注册表单为例对基础知识做的一个总结。希望对来阅读的小伙伴有所帮助。我也是刚开始学，感觉云里来雾里去的，如有纰漏，不足之处。请读者见谅并指出！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/21/form/" class="archive-article-date">
-  	<time datetime="2017-07-21T09:24:06.442Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/21/form/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/hello world/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:54:40.251Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/15/hello world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -229,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
